@@ -1,0 +1,132 @@
+{
+    "name": "headline-by-snehasish",
+    "description": "A Ghost theme based on the official headline theme.",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "type": "commonjs",
+    "license": "MIT",
+    "author": {
+        "name": "Snehasish Nayak",
+        "email": "snehasish@snehasishnayak.com",
+        "url": "https://snehasishnayak.com"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "docs": "https://headline.ghost.io/about/",
+    "config": {
+        "posts_per_page": 7,
+        "image_sizes": {
+            "xs": {
+                "width": 150
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 720
+            },
+            "l": {
+                "width": 960
+            },
+            "xl": {
+                "width": 1200
+            },
+            "xxl": {
+                "width": 2000
+            }
+        },
+        "card_assets": true,
+        "custom": {
+            "hero_title": {
+                "type": "text",
+                "default": "Hey Friends"
+            },
+            "hero_description": {
+                "type": "text",
+                "default": "Website Hero Description"
+            },
+            "hero_cta_text": {
+                "type": "text",
+                "default": "Read More"
+            },
+            "hero_cta": {
+                "type": "text",
+                "default": "/#"
+            },
+            "navigation_layout": {
+                "type": "select",
+                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "default": "Stacked"
+            },
+            "header_style": {
+                "type": "select",
+                "options": ["Light", "Accent color", "Dark"],
+                "default": "Light"
+            },
+            "title_font": {
+                "type": "select",
+                "options": ["Modern sans-serif", "Elegant serif"],
+                "default": "Modern sans-serif"
+            },
+            "body_font": {
+                "type": "select",
+                "options": ["Modern sans-serif", "Elegant serif"],
+                "default": "Elegant serif"
+            },
+            "white_publication_logo_for_transparent_header": {
+                "type": "image"
+            },
+            "email_signup_title": {
+                "type": "text",
+                "default": "Level up your work<br/>without burning out."
+            },
+            "email_signup_text": {
+                "type": "text",
+                "default": "I write about real productivity, AI hacks for modern teams, leadership lessons from the trenches, and honest reflections from life at 1:30 AM.<br  />No fluff. Just tools, insights, and stories that help you grow — one post at a time."
+            },
+            "footer_text": {
+                "type": "text"
+            },
+            "enter_tag_slugs_for_primary_sections": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "enter_tag_slugs_for_secondary_sections": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "google_analytics": {
+                "type": "text",
+                "default": ""
+            }
+        }
+    },
+    "scripts": {
+        "dev": "gulp",
+        "test": "gscan .",
+        "zip": "gulp zip"
+    },
+    "devDependencies": {
+        "@tryghost/shared-theme-assets": "2.5.0",
+        "autoprefixer": "10.4.21",
+        "beeper": "2.1.0",
+        "cssnano": "7.0.6",
+        "gscan": "4.47.0",
+        "gulp": "5.0.0",
+        "gulp-concat": "2.6.1",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "10.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-zip": "6.1.0",
+        "ordered-read-streams": "2.0.0",
+        "postcss": "8.5.3",
+        "postcss-easy-import": "4.0.0",
+        "pump": "3.0.2"
+    }
+}

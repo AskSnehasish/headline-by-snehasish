@@ -1,0 +1,27 @@
+<script>
+(function () {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+    const root = document.documentElement;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+
+    function setIcon(theme) {
+        icon.innerHTML = theme === 'dark'
+            ? `<circle cx="12" cy="12" r="5"/><path d="M12 1v2"/><path d="M12 21v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l1.42-1.42"/>`
+            : `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+    }
+
+    const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+    root.setAttribute('data-theme', initialTheme);
+    setIcon(initialTheme);
+
+    toggleBtn?.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        const newTheme = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        setIcon(newTheme);
+    });
+})();
+</script>

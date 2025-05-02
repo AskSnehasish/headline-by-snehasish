@@ -1,0 +1,24 @@
+<section class="featured-posts-grid">
+    <div class="featured-posts-container">
+        {{#get "posts" filter="featured:true" limit="4"}}
+            {{#foreach posts}}
+                <div class="featured-post-card">
+                    <a class="featured-post" href="{{url}}">
+                        {{#if feature_image}}
+                            <figure class="featured-post-image">
+                                <img src="{{img_url feature_image size="m"}}" alt="{{title}}">
+                            </figure>
+                        {{/if}}
+
+                        {{#if primary_tag}}
+                            <span class="featured-post-tag">{{primary_tag.name}}</span>
+                        {{/if}}
+
+                        <h3 class="featured-post-title">{{title}}</h3>
+                        <time class="featured-post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                    </a>
+                </div>
+            {{/foreach}}
+        {{/get}}
+    </div>
+</section>

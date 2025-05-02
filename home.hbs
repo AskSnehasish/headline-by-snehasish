@@ -1,0 +1,99 @@
+{{!< default}} <main class="gh-main gh-outer">
+    <div class="gh-inner">
+        <section class="gh-hero-section">
+    <div class="gh-hero-inner">
+        <h1 class="gh-hero-title">{{@custom.hero_title}}</h1>
+        <p class="gh-hero-description">
+            {{{@custom.hero_description}}}
+        </p>
+        <a href="{{@custom.hero_cta}}" class="gh-hero-button gh-btn">{{@custom.hero_cta_text}}</a>
+    </div>
+</section>
+
+
+
+        <section class="gh-topic gh-topic-grid">
+            <h2 class="gh-topic-name">
+                Featured
+            </h2>
+            {{> "featured-slider"}}
+        </section>
+
+
+        {{#if @custom.enter_tag_slugs_for_primary_sections}}
+        {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
+        {{#foreach tags}}
+        {{> "topic-grid" exclude_featured=true}}
+        {{/foreach}}
+        {{/get}}
+        {{else}}
+        {{#match posts.length ">" 1}}
+        {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
+        {{#foreach tags}}
+        {{> "topic-grid" exclude_featured=true}}
+        {{/foreach}}
+        {{/get}}
+        {{/match}}
+        {{/if}}
+
+
+
+        {{!-- {{#if @custom.enter_tag_slugs_for_primary_sections}}
+        {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
+        {{#foreach tags}}
+        {{> "topic-grid"}}
+        {{/foreach}}
+        {{/get}}
+        {{else}}
+        {{#match posts.length ">" 1}}
+        {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
+        {{#foreach tags}}
+        {{> "topic-grid"}}
+        {{/foreach}}
+        {{/get}}
+        {{/match}}
+        {{/if}} --}}
+
+        {{!-- <section class="gh-topic gh-topic-grid">
+            <h2 class="gh-topic-name">
+                Latest
+            </h2>
+            <div class="gh-topic-content">
+                {{#get "posts" filter="featured:false" limit="7" as | posts|}}
+                {{#foreach posts}}
+                {{> "loop-grid"}}
+                {{/foreach}}
+                {{/get}}
+            </div>
+            <footer class="gh-topic-footer">
+                {{#match pagination.pages ">" 1}}
+                <a class="gh-topic-link" href="{{@site.url}}/page/2">Show more {{> "icons/arrow"}}</a>
+                {{/match}}
+            </footer>
+        </section> --}}
+
+        {{#if @custom.enter_tag_slugs_for_secondary_sections}}
+        {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
+        {{#if tags}}
+        <div class="gh-topic-list">
+            {{#foreach tags}}
+            {{> "topic-minimal"}}
+            {{/foreach}}
+        </div>
+        {{/if}}
+        {{/get}}
+        {{else}}
+        {{#match posts.length ">" 1}}
+        {{#get "tags" include="count.posts" order="count.posts desc"}}
+        {{#if tags.[3]}}
+        <div class="gh-topic-list">
+            {{#foreach tags from="4" limit="3"}}
+            {{> "topic-minimal"}}
+            {{/foreach}}
+        </div>
+        {{/if}}
+        {{/get}}
+        {{/match}}
+        {{/if}}
+    </div>
+    </main>
