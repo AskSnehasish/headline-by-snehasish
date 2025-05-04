@@ -224,7 +224,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 @media (max-width: 767px) {
 
     .home-template .gh-topic-grid .gh-card.large .gh-card-title,
-    .tag-template .gh-topic-grid .gh-card.large .gh-card-titl,
+    .tag-template .gh-topic-grid .gh-card.large .gh-card-title,
     .paged .gh-topic-grid .gh-card.large .gh-card-title {
         font-size: 2.8rem !important;
     }
