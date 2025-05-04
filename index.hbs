@@ -12,12 +12,12 @@
                 {{#match pagination.page 2}}
                     {{#get "posts" include="authors" limit=@config.posts_per_page as |recent|}}
                         {{#foreach recent}}
-                            {{> "loop-grid"}}
+                            {{> "loop-tag"}}
                         {{/foreach}}
                     {{/get}}
                 {{/match}}
                 {{#foreach posts}}
-                    {{> "loop-grid" has_large_post=false}}
+                    {{> "loop-tag"}}
                 {{/foreach}}
             </div>
         </div>

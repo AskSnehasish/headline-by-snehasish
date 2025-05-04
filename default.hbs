@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" data-theme="dark">
 
 <head>
     <meta charset="utf-8">
@@ -93,6 +93,9 @@
                                     alt="{{@site.title}}">
                                 {{/if}}
                                 {{else}}
+                                {{#if @site.icon}}
+                                <img src="{{@site.icon}}" alt="{{@site.title}}">
+                                {{/if}}
                                 {{@site.title}}
                                 {{/if}}
                             </a>
@@ -140,7 +143,7 @@
                         {{#unless @site.members_invite_only}}
                         <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
                         <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup"
-                            data-portal="signup">Subscribe</a>
+                            data-portal="signup" style="gap: 6px;padding: 12px 15px;">{{> "icons/email"}} Subscribe</a>
                         {{else}}
                         <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Sign
                             in</a>

@@ -61,8 +61,8 @@
             },
             "navigation_layout": {
                 "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
-                "default": "Stacked"
+                "options": ["Logo on the left", "Logo in the middle"],
+                "default": "Logo on the left"
             },
             "header_style": {
                 "type": "select",
