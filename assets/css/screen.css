@@ -77,9 +77,9 @@ html[data-theme="dark"] {
     --color-black: #000000;
     --color-light-gray: #2a2a2a;
     --color-darker-gray: #eeeeee;
-    background-color: #191919;
+    background-color: #141414;
     color: var(--color-primary-text);
-    --background-color: #191919;
+    --background-color: #141414;
 }
 
 /* Styles specific to grid style sections */
@@ -1223,6 +1223,10 @@ strong {
 }
 
 @media (max-width: 767px) {
+    .featured-post-title {
+        font-size: 2.8rem !important;
+    }
+
     .gh-hero-section {
         padding: 40px 0 80px !important;
         text-align: left;
@@ -1278,9 +1282,9 @@ strong {
     opacity: .9;
 }
 
-/* .gh-inner {
-    max-width: 1300px !important;
-} */
+.gh-inner {
+    max-width: 1200px !important;
+}
 
 
 .has-side-about .gh-about-content-inner {
@@ -1300,7 +1304,7 @@ img {
 @media (max-width: 767px) {
     .is-head-open #gh-head {
         overflow-y: auto !important;
-        background-color: #191919 !important;
+        background-color: #141414 !important;
     }
 
 }
@@ -1326,9 +1330,9 @@ body,
     background-color: var(--background-color) !important;
 }
 
-.gh-inner {
+/* .gh-inner {
     max-width: none !important;
-}
+} */
 
 .gh-head-logo a, a.gh-head-logo {
     display: flex;
@@ -1345,3 +1349,16 @@ body,
     border-radius: 0px !important;
     font-family: system-ui;
 }
+
+  .gh-dropdown {
+    background-color: var(--background-color);
+    filter: brightness(0.95);
+  }
+
+  .gh-dropdown li a {
+    color: unset !important;
+}
+
+  .gh-foot-menu {
+    border-bottom: 1px solid var(--color-light-gray) !important;
+  }
